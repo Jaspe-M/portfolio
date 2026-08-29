@@ -1,0 +1,62 @@
+:root {
+    --color-bg: #f0f0f0; /* light page background */
+    --color-text: #585454; /* main body text */
+    --color-text-muted: #6b6b6b; /* secondary/grey text */
+    --color-accent: #ff600a;
+    --color-accent-soft: #ff600a;
+    --color-card: #ffffff;
+
+    --font-display: 'Big Shoulders Display', sans-serif;
+    --font-body: "Inter", system-ui, sans-serif;
+
+    --radius-pill: 999px;
+    --radius-card: 12px;
+
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body), serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden; /* the marquee intentionally overflows horizontally */
+    zoom: 1.45;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+@media (max-height: 850px) {
+    body {
+        zoom: 1.23;
+    }
+}
+

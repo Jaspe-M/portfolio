@@ -1,0 +1,96 @@
+@import "../section/Section.css";
+
+#projects,
+.projects {
+    scroll-margin-top: 86px; /* determines the scroll offset when using navlink */
+}
+
+.projects {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    background: var(--color-card);
+    border: 1px solid #e2e2e0;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.project-card__body {
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.project-card__top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.project-card__folder-icon {
+    color: var(--color-accent);
+}
+
+.project-card__links {
+    display: flex;
+    gap: 10px;
+}
+
+.project-card__links a {
+    color: var(--color-text-muted);
+    display: flex;
+    transition: color 0.2s ease;
+}
+
+.project-card__links a:hover {
+    color: var(--color-accent);
+}
+
+.project-card__title {
+    font-family: Calibri, serif;
+    font-size: 1.1rem;
+    color: #1a1919;
+}
+
+.project-card__desc {
+    font-family: Calibri, serif;
+    font-size: 0.80rem;
+    font-weight: lighter;
+    line-height: 1.45;
+    height: 100px;
+    color: var(--color-text-muted);
+}
+
+.project-card__stack {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-accent);
+    margin-top: 4px;
+}
+
+
+@media (max-width: 767px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}

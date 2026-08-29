@@ -1,0 +1,286 @@
+.nav-fixed-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--color-bg);
+    padding: 13px;
+
+    display: flex;
+    justify-content: center;
+    pointer-events: none; /* let clicks pass through the empty space around the pill */
+}
+
+.nav-pill {
+    pointer-events: auto; /* re-enable clicks on the pill itself */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--color-card);
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(188, 185, 185, 0.92);
+    padding: 6px 8px;
+    box-shadow:
+            0 1px 2px rgba(0, 0, 0, 0.04),
+            0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.nav-avatar {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    margin-right: 13px;
+}
+
+/* ==========================================================================
+   MIDDLE CONTAINER & CUBE ANIMATION
+   ========================================================================== */
+
+.nav-middle-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    perspective: 400px;
+    perspective-origin: 50% 50%;
+}
+
+.nav-links-row,
+.nav-email-link {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    white-space: nowrap;
+    font-size: 13.5px;
+    font-weight: 500;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.nav-links-row a {
+    color: var(--color-text);
+    text-decoration: none;
+    background: linear-gradient(to right, #ff600a 50%, var(--color-text) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background-position 0.2s ease-in-out;
+}
+
+.nav-links-row a:hover {
+    background-position: 0 0;
+}
+
+.nav-email-link {
+    color: var(--color-text);
+    text-decoration: none;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.nav-email-link:hover {
+    color: #ff600a;
+}
+
+/* ==========================================================================
+   CONTACT BUTTON & STATUS
+   ========================================================================== */
+
+.nav-contact {
+    background: linear-gradient(to bottom, #4a4848 50%, #ff600a 50%);
+    background-size: 100% 200%;
+    background-position: 0 0;
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-pill);
+    padding: 9px 0;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-position 0.2s ease-in-out;
+    width: 85px;
+    flex-shrink: 0;
+}
+
+.nav-contact:hover {
+    background-position: 0 100%;
+}
+
+.nav-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 12px;
+    white-space: nowrap;
+    font-size: 13.5px;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+
+.nav-dot-wrap {
+    position: relative;
+    width: 9px;
+    height: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22c55e;
+}
+
+.nav-dot-ping {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #22c55e;
+    opacity: 0.5;
+    animation: nav-ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes nav-ping {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    75%,
+    100% {
+        transform: scale(2.4);
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   HAMBURGER BUTTON (tablet/phone only)
+   Hidden by default (desktop) — the media queries below turn it on.
+   ========================================================================== */
+
+.nav-hamburger {
+    display: none; /* desktop: hidden, full links row shows instead */
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-accent);
+}
+
+/* ==========================================================================
+   MOBILE MENU OVERLAY PANEL
+   The white rounded card that drops down when the hamburger is tapped.
+   ========================================================================== */
+
+.mobile-menu {
+    position: fixed;
+    inset: 0; /* white background covers entire screen */
+    z-index: 101;
+    pointer-events: auto;
+
+    background: var(--color-card);
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.mobile-menu-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-accent);
+}
+
+.mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    padding: 24px 0 28px;
+}
+
+.mobile-menu-links a {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.mobile-menu-contact {
+    display: block;
+    width: 100%;
+    background: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-pill);
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+}
+
+.mobile-menu-email {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(188, 185, 185, 0.92);
+    color: var(--color-text);
+    border-radius: var(--radius-pill);
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nav-status-mobile {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .nav-desktop-links {
+        display: none;
+    }
+    .nav-status-mobile {
+        display: flex;
+    }
+    .nav-hamburger {
+        display: flex;
+    }
+    .nav-status{
+        margin-right: 0;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .nav-fixed-wrap {
+        top: 0;
+    }
+    .nav-status span:first-child {
+        font-size: 12px;
+    }
+    .mobile-menu {
+        top: 0;
+    }
+}

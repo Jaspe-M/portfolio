@@ -1,0 +1,61 @@
+@import "../section/Section.css";
+
+.experience {
+    max-width: 720px;
+    height: 21rem;
+    margin: 1.6rem auto 0 auto;
+    padding: 40px 24px 100px;
+
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.experience-item h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #6c6b6b;
+}
+
+.experience-meta {
+    font-size: 12.5px;
+    color: var(--color-text-muted);
+    margin-bottom: 10px;
+}
+
+.experience-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #444;
+
+    text-wrap: pretty;
+}
+
+
+@media (max-width: 1024px) {
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .experience {
+        margin: 0 auto 67px auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .experience {
+        margin: 0 auto 100px auto;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .experience {
+        margin: 0 auto 165px auto;
+    }
+}

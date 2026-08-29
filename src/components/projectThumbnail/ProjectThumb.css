@@ -1,0 +1,38 @@
+.project-thumb {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: var(--radius-card) var(--radius-card) 0 0;
+}
+
+/* Base stock image (always visible) */
+.project-thumb__base {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1);
+    transition: transform 0.35s ease;
+}
+
+/* Hover reveal image (hidden by default) */
+.project-thumb__hover-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.03);
+    transition: opacity 0.35s ease, transform 0.5s ease;
+}
+
+/* On hover, fade in the custom project image */
+.project-card:hover .project-thumb__hover-image {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Slight zoom on the base stock image if there is no custom hover image */
+.project-card:hover .project-thumb__base {
+    transform: scale(1.05);
+}

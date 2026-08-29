@@ -1,0 +1,24 @@
+/* CSS for a hared heading style for the sections ex: "PROJECTS ————" , "EXPERIENCE ————"  */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.section-heading h2 {
+    font-family: var(--font-display), serif;
+    font-weight: 400;
+    color: var(--color-accent);
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.section-rule {
+    flex: 1;
+    height: 1px;
+    background: #d8d8d5;
+}

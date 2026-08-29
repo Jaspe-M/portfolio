@@ -1,0 +1,124 @@
+#home,
+.hero {
+    scroll-margin-top: -40px;
+}
+
+
+.hero {
+    padding: 140px 24px 60px;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 8px;
+}
+
+.hero-title-wrap {
+    margin-top: 1.4rem;
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-display), serif;
+    font-weight: 400;
+    color: var(--color-accent);
+    font-size: clamp(2rem, 15vw, 11rem);
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+
+}
+
+.hero-title-top {
+    display: block;
+}
+
+.hero-title-bottom {
+    font-size: clamp(2rem, 15vw, 9rem);
+
+}
+
+
+.hero-photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(135px, 18vw, 130px);
+    height: clamp(195px, 25.5vw, 220px);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+
+.hero-divider {
+    display: block;
+    margin: 28px auto;
+    color: var(--color-accent);
+    font-size: 2rem;
+}
+
+.hero-bio {
+    color: var(--color-text-muted);
+    font-size: 14.5px;
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.hero-scroll-hint {
+    display: block;
+    width: 2px;
+    height: 24px;
+    background: var(--color-text-muted);
+    opacity: 0.3;
+    margin: 40px auto 0;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .hero {
+        padding-top: 110px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .hero {
+        padding-top: 90px;
+    }
+
+    .hero-title-wrap {
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: clamp(2.75rem, 14vw, 3.5rem);
+        align-items: center;
+        text-align: center;
+    }
+
+
+    .hero-title-top,
+    .hero-title-bottom {
+        width: 100%;
+        text-align: center;
+        font-size: inherit; /* inherits font-size of .hero-title over */
+    }
+
+    .hero-photo {
+        width: 22vw;
+        height: 32vw;
+        max-width: 60px;
+        max-height: 80px;
+        border-radius: 999px;
+    }
+}
