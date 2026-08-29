@@ -29,7 +29,6 @@
     display: flex;
     flex-direction: column;
     font-family: var(--font-display), serif;
-    font-weight: 400;
     color: var(--color-accent);
     font-size: clamp(2rem, 15vw, 11rem);
     line-height: 0.95;

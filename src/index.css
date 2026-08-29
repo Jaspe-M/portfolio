@@ -6,14 +6,17 @@
     --color-accent-soft: #ff600a;
     --color-card: #ffffff;
 
-    --font-display: 'Big Shoulders Display', sans-serif;
+    --font-display: 'Big Shoulders', sans-serif;
     --font-body: "Inter", system-ui, sans-serif;
 
     --radius-pill: 999px;
     --radius-card: 12px;
 
 }
-
+h1, h2 {
+    font-family: var(--font-display), serif;
+    font-weight: 900;
+}
 
 * {
     box-sizing: border-box;
@@ -29,7 +32,6 @@ body {
     background: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-body), serif;
-    -webkit-font-smoothing: antialiased;
     overflow-x: hidden; /* the marquee intentionally overflows horizontally */
     zoom: 1.45;
 }
