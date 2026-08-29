@@ -16,6 +16,6 @@ export const projects: Project[] = [
         title: "Portfolio",
         description: "My personal developer portfolio, built to highlight my skills and showcase recent projects",
         stack: ["React.js", "TypeScript", "Vite", "CSS"],
-        githubUrl: "https://github.com/yourname/project-two",
+        githubUrl: "https://github.com/Jaspe-M/portfolio",
         stockImage: "/images/project2.jpg" },
 ];
