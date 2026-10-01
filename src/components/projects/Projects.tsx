@@ -7,7 +7,7 @@ export default function Projects() {
     return (
         <section id="projects" className="projects">
             <div className="section-heading">
-                <h2>Projects</h2>
+                <h2> Recent Projects</h2>
                 <span className="section-rule" aria-hidden="true" />
             </div>
 
